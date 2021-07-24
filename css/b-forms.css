@@ -280,3 +280,45 @@ fieldset .fieldset-title {
 .dark-mode .ui-dialog {
   background: #333;
 }
+.node-preview-container {
+  background: #555 url("../img/monochrome-medium.png");
+  color: #fff;
+  border-top: 1px solid #000;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.node-preview-container form {
+  max-width: 1200px;
+  margin: .5rem auto;
+  background: inherit;
+}
+.node-preview-container form > div {
+  margin: 0 4vw;
+}
+input.node-preview-save-button.form-submit,
+input.node-preview-save-button.form-submit:hover {
+  border: 1px solid;
+  color: #fff;
+  background: #222 url("../img/monochrome-semidark.png");
+  border-radius: 0;
+}
+.node-preview-backlink,
+.node-preview-backlink:hover {
+  color: #fff;
+  margin: 0 1rem;
+}
+.node-preview-banner-form-view-mode .form-item {
+  display: inline-block;
+  margin: 1rem;
+}
+.node-preview-page .layout {
+  padding-bottom: 140px;
+}
+@media (min-width: 620px) {
+  .node-preview-page .layout {
+    padding-bottom: 90px;
+  }
+}

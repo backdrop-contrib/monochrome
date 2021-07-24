@@ -20,6 +20,9 @@ function monochrome_preprocess_page(&$variables) {
       $variables['classes'][] = backdrop_clean_css_identifier('term-page-' . $term->name);
     }
   }
+  elseif (substr($path, 0, 13) == 'node/preview/') {
+    $variables['classes'][] = 'node-preview-page';
+  }
 }
 
 /**
@@ -59,4 +62,11 @@ function monochrome_breadcrumb($variables) {
     $output .= '</nav>';
   }
   return $output;
+}
+
+/**
+ * Implements hook_css_alter().
+ */
+function monochrome_css_alter(&$css) {
+  unset($css['core/modules/node/css/node.preview.css']);
 }
