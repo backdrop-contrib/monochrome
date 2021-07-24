@@ -1,0 +1,122 @@
+.comment h2.title {
+  margin-bottom: 1em;
+}
+.comment div.user-picture img {
+  margin-left: 0; /* LTR */
+}
+[dir="rtl"] .comment div.user-picture img {
+  margin-right: 0;
+}
+.comment {
+  margin-bottom: 2rem;
+  display: table;
+  vertical-align: top;
+}
+.comment .attribution {
+  display: table-cell;
+  padding: 0 30px 0 0; /* LTR */
+  vertical-align: top;
+  overflow: hidden;
+}
+[dir="rtl"] .comment .attribution {
+  padding: 0 0 0 30px;
+}
+@media (max-width: 640px) {
+  .comment,
+  .comment .attribution {
+    display: block;
+  }
+}
+.comment .attribution img {
+  margin: 0;
+}
+.comment .attribution .username {
+  white-space: nowrap;
+}
+.comment .submitted p {
+  margin: 4px 0;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+.comment .submitted .comment-time {
+  font-size: 0.8em;
+}
+.comment .submitted .comment-permalink {
+  font-size: 0.8em;
+}
+.comment .content {
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+.comment .comment-arrow {
+  border-top: 1px solid;
+  border-right: 1px solid;
+  background: #fcfcfc;
+  height: 16px;
+  margin-left: -34px; /* LTR */
+  margin-top: 10px;
+  position: absolute;
+  width: 16px;
+  transform: rotate(-135deg);
+}
+.dark-mode .comment .comment-arrow {
+  background: #444;
+}
+[dir="rtl"] .comment .comment-arrow {
+  transform: rotate(45deg);
+  margin-left: 0;
+  margin-right: -34px;
+}
+.comment .comment-text {
+  padding: 10px 25px;
+  border: 1px solid;
+  display: table-cell;
+  vertical-align: top;
+  position: relative;
+  width: 100%;
+  background-color: #fcfcfc
+}
+.dark-mode .comment .comment-text {
+  background-color: #444;
+}
+.comment .comment-text .permalink {
+  font-size: 1.3rem;
+}
+.comment-text .comment-footer {
+  position: absolute;
+  padding: 0;
+  right: 4px;
+  bottom: -1.2rem;
+}
+[dir="rtl"] .comment-text .comment-footer {
+  right: auto;
+  left: 4px;
+}
+.comment-text .comment-footer .links.inline,
+.comment-text .comment-footer .links.inline lis {
+  padding: 0;
+}
+.comment-text .comment-footer .links.inline a {
+  margin: 0;
+}
+.comment .indented {
+  margin-left: 40px; /* LTR */
+}
+[dir="rtl"] .comment .indented {
+  margin-right: 40px;
+  margin-left: 0;
+}
+.comment ul.links,
+.comment ul.links li {
+  padding: .3rem;
+  margin: 0;
+}
+.comment-unpublished {
+  background-color: inherit;
+}
+.comment-unpublished .comment-text {
+  background: #ddd url("../img/mono-warn.png");
+}
+.dark-mode .comment-unpublished .comment-text {
+  background: #555 url("../img/mono-warn-dark.png");
+}

@@ -1,0 +1,282 @@
+ul.primary {
+  border-bottom: 1px solid;
+}
+ul.primary li a {
+  padding: .8rem 1.5rem;
+  position: relative;
+  margin-bottom: -1px;
+  background: #aaa url("../img/monochrome-medium.png");
+  color: #fff;
+}
+ul.primary li a:hover {
+  color: #000;
+  background: #eee url("../img/monochrome.png");
+}
+.dark-mode ul.primary li a:hover {
+  color: #fff;
+  background: #555;
+}
+ul.primary li.active a {
+  background: #fff;
+}
+.dark-mode ul.primary li.active a {
+  background: #333;
+  color: #fff;
+}
+ul.primary li.active a,
+ul.primary li.active a:hover {
+  color: #000;
+  border-color: #000;
+}
+.dark-mode ul.primary li.active a,
+.dark-mode ul.primary li.active a:hover {
+  color: #fff;
+  background: #333;
+  border-color: #fff;
+}
+
+ul.primary li.active a:hover {
+  background: #eee url("../img/monochrome.png");
+}
+.dark-mode ul.secondary a.active {
+  background: #555;
+}
+form {
+  color: #222;
+}
+.dark-mode form {
+  color: #eee;
+}
+.form-item,
+.form-actions {
+  margin-bottom: 1.6rem;
+}
+form,
+input,
+select,
+textarea {
+  font: 1rem/1.3 "Open Sans", sans-serif;
+  background-color: inherit;
+  color: inherit;
+  max-width: 100%;
+}
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+select {
+  border: 1px solid;
+  padding: .5rem;
+}
+.dark-mode input[type="text"],
+.dark-mode input[type="password"],
+.dark-mode input[type="search"],
+.dark-mode input[type="number"],
+.dark-mode input[type="email"],
+.dark-mode input[type="url"],
+.dark-mode input[type="date"],
+.dark-mode input[type="time"],
+.dark-mode select {
+  color: #eee;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus {
+  outline: none;
+  box-shadow: 2px 2px 0;
+}
+input[disabled] {
+  background: #f4f4f4;
+  border: 1px dashed;
+}
+.dark-mode input[disabled] {
+  background: #666;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  background: #fff url("../img/monochrome.png");
+  color: #000;
+  font: 1rem/1.5 sans-serif;
+  font-weight: bold;
+  border: 1px solid #000;
+  margin: .5rem 1rem .5rem 0;/* LTR */
+  padding: .5rem 1rem;
+}
+.dark-mode button,
+.dark-mode [type="button"],
+.dark-mode [type="reset"],
+.dark-mode [type="submit"] {
+  color: #eee;
+  border-color: #eee;
+  background: #555 url("../img/monochrome-dark.png");
+}
+button:hover,
+[type="button"]:hover,
+[type="reset"]:hover,
+[type="submit"]:hover,
+button:focus,
+[type="button"]:focus,
+[type="reset"]:focus,
+[type="submit"]:focus {
+  box-shadow: 2px 2px 0;
+  outline: none;
+}
+input.button-primary {
+  color: #fff;
+  background: #aaa url("../img/monochrome-medium.png");
+}
+input.button-primary:hover,
+input.button-primary:focus {
+  box-shadow: 2px 2px 0 #000;
+}
+.dark-mode input.button-primary {
+  background: #aaa url("../img/monochrome-medium.png");
+}
+.dark-mode input.button-primary:hover,
+.dark-mode input.button-primary:focus {
+  box-shadow: 2px 2px 0 #fff;
+}
+a.button,
+a.form-cancel {
+  font-weight: bold;
+  margin: 0 1rem 0 0;/* LTR */
+  padding: .5rem 1rem;
+  border: 1px solid;
+  text-decoration: none;
+}
+a.button:hover,
+a.button:focus,
+a.form-cancel:hover,
+a.form-cancel:focus {
+  outline: none;
+  box-shadow: 2px 2px 0;
+}
+.form-delete {
+  background: #fff url("../img/mono-warn.png");
+}
+.dark-mode .form-delete {
+  background: #444 url("../img/mono-warn-dark.png");
+}
+.vertical-tab-link {
+  color: #000;
+}
+.dark-mode .vertical-tab-link {
+  color: #eee;
+}
+.vertical-tab-item {
+  background: #ddd url("../img/monochrome.png");
+  font-size: .9rem;
+}
+.dark-mode .vertical-tab-item {
+  background: #333 url("../img/monochrome-medium.png");
+}
+.vertical-tab-selected strong,
+.vertical-tab-selected .fieldset-legend {
+  color: inherit;
+}
+.vertical-tab-selected.vertical-tab-item {
+  background-image: none;
+}
+.vertical-tab-link:hover,
+.vertical-tab-link:focus {
+  outline: 1px solid;
+  box-shadow: 3px 3px 0;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+.dark-mode .vertical-tab-link:hover,
+.dark-mode .vertical-tab-link:focus {
+  background: #333;
+}
+.filter-wrapper {
+  padding: 1rem;
+  border: 1px solid;
+  border-top: none;
+  position: relative;
+}
+.filter-wrapper legend {
+  position: absolute;
+  top: 5px;
+  left: 0;/* LTR */
+}
+fieldset .fieldset-title {
+  text-decoration: none;
+  font-size: .9rem;
+}
+.dark-mode .progress .bar {
+  background: #333;
+}
+.progress .filled {
+  background: #777 url("../img/monochrome-medium.png");
+}
+.js .dropbutton li,
+.js .dropbutton a {
+  text-align: initial;
+}
+.dropbutton-multiple .dropbutton,
+.dropbutton-toggle button {
+  border-radius: 0;
+  border-color: #000;
+}
+.js .dropbutton-widget {
+  border: 1px solid #000;
+  border-radius: 0;
+}
+.js .dark-mode .dropbutton-widget {
+  border-color: #eee;
+  background-color: #555;
+}
+.js .dark-mode .dropbutton-widget:hover {
+  background-color: #444;
+}
+.js .dark-mode .dropbutton-widget:hover * {
+  background-color: inherit;/* @todo still not working */
+}
+.dropbutton-widget a {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: normal;
+}
+.search-block-form > div {
+  display: flex;
+}
+.search-block-form .form-item,
+.search-block-form .form-actions,
+.search-block-form .form-actions input {
+  margin: 0;
+}
+.search-block-form .button-primary {
+  padding: .455rem;
+  border-left: 0;
+}
+.ui-dialog .ui-dialog-buttonpane button,
+.ui-dialog .ui-dialog-buttonpane button:hover,
+.ui-dialog .ui-dialog-buttonpane button:focus {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 0;
+  margin: .5rem;
+  font-weight: bold;
+}
+.ui-dialog .ui-dialog-content .form-actions input,
+.ui-dialog .ui-dialog-content .form-actions a {
+  display: inline-block;
+}
+.dark-mode .ui-dialog {
+  background: #333;
+}

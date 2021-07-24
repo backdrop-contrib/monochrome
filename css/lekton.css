@@ -1,0 +1,12 @@
+@font-face {
+  font-family: Lekton;
+  font-style: normal;
+  font-weight: 700;
+  src: url('Lekton-Bold.eot'); /* Old IE */
+  src:
+    url('../fonts/Lekton-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Lekton-Bold.woff2') format('woff2'),
+    url('../fonts/Lekton-Bold.woff') format('woff'),
+    url('../fonts/Lekton-Bold.ttf') format('truetype'),
+    url('../fonts/Lekton-Bold.svg#Lekton-Bold') format('svg');
+}

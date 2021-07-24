@@ -1,0 +1,16 @@
+name = Monochrome
+description = No color, no distraction. Let your content be the main actor on your website.
+type = theme
+backdrop = 1.x
+
+stylesheets[all][] = css/lekton.css
+stylesheets[all][] = css/base.css
+stylesheets[all][] = css/b-forms.css
+stylesheets[all][] = css/comments.css
+stylesheets[screen][] = css/maintenance.css
+
+; Include a style sheet in the rich-text editor.
+ckeditor_stylesheets[] = css/lekton.css
+ckeditor_stylesheets[] = css/base.css
+
+scripts[] = js/monochrome.js
