@@ -27,7 +27,7 @@
     if (dmValue == true) {
       window.setTimeout(function () {
         $('iframe.cke_wysiwyg_frame').contents().find('body').addClass('dark-mode');
-      }, 950);
+      }, 1000);
     }
 
     $('#darkmode-toggle').on('click', function() {

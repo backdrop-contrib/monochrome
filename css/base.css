@@ -456,6 +456,13 @@ ul.links.inline a {
 .dark-mode.cke_editable {
   background: #333;
 }
+.dark-mode .cke_top,
+.dark-mode .cke_bottom {
+  filter: invert(85%);
+}
+.dark-mode .cke_wysiwyg_frame {
+  background-color: #333;
+}
 .node .field-name-field-tags {
   margin: 1rem 2rem;
 }
