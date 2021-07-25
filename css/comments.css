@@ -115,8 +115,8 @@
   background-color: inherit;
 }
 .comment-unpublished .comment-text {
-  background: #ddd url("../img/mono-warn.png");
+  background: #f7f7f7 url("../img/mono-warn.png");
 }
 .dark-mode .comment-unpublished .comment-text {
-  background: #555 url("../img/mono-warn-dark.png");
+  background: #474747 url("../img/mono-warn-dark.png");
 }
