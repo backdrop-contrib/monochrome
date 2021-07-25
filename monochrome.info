@@ -11,6 +11,7 @@ stylesheets[screen][] = css/maintenance.css
 
 ; Include a style sheet in the rich-text editor.
 ckeditor_stylesheets[] = css/lekton.css
+ckeditor_stylesheets[] = css/ckeditor-iframe.css
 ckeditor_stylesheets[] = css/base.css
 
 scripts[] = js/monochrome.js

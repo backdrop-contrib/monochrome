@@ -21,15 +21,6 @@
       $('#darkmode-toggle').attr('value', strings.buttonTextLight);
     }
 
-    // It takes some time until CKEditor initializes, so we add a short delay.
-    // This is sort of unreliable, though. And a bit ugly because of the
-    // delayed switch.
-    if (dmValue == true) {
-      window.setTimeout(function () {
-        $('iframe.cke_wysiwyg_frame').contents().find('body').addClass('dark-mode');
-      }, 1000);
-    }
-
     $('#darkmode-toggle').on('click', function() {
       dmValue = localStorage.getItem('monochromeDarkMode');
       if (dmValue === null) {
@@ -42,6 +33,18 @@
       }
       $(window).monochromeUpdateMode(mode, strings);
     });
+
+    // It takes some time until CKEditor initializes, so we do some polling.
+    // That's not 100% reliable, too, but better than adding a huge timeout.
+    if (dmValue == true) {
+      let textareas = $('textarea');
+      // We can not know if CKEditor is active on that page, but at least we can
+      // skip polling if there's not even a textarea;
+      if (textareas.length > 0) {
+        $(window).monochromeWaitForCke();
+      }
+    }
+
   });
 
   $.fn.monochromeUpdateMode = function(mode, strings) {
@@ -61,5 +64,27 @@
     // @todo Get rid of inline style when not needed?
     $('body').css('visibility','hidden');
     $('body').css('visibility','visible');
-  }
+  };
+
+  $.fn.monochromeWaitForCke = function () {
+    var run = 1;
+    // The initial timeout is longer.
+    var timeout = 800;
+
+    // Self-calling polling function.
+    (function checkCke(run, timeout) {
+      window.setTimeout(function () {
+        timeout = 150;
+        ckeBody = $('iframe.cke_wysiwyg_frame').contents().find('body.cke_editable');
+        if (ckeBody.length > 0) {
+          ckeBody.addClass('dark-mode');
+        }
+        else if (run < 5) {
+          run += 1;
+          checkCke(run, timeout);
+        }
+      }, timeout);
+    })(run, timeout);
+  };
+
 })(jQuery);

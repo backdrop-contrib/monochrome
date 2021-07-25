@@ -204,6 +204,10 @@ pre {
 .dark-mode pre {
   background: #333 url("../img/monochrome-semidark.png");
 }
+.messages pre {
+  background: inherit;
+  border: 0;
+}
 .block-system-main-menu {
   margin: 1rem 0;
   border-top: 1px solid;

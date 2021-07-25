@@ -70,3 +70,13 @@ function monochrome_breadcrumb($variables) {
 function monochrome_css_alter(&$css) {
   unset($css['core/modules/node/css/node.preview.css']);
 }
+
+/**
+ * Implements hook_ckeditor_css_alter().
+ */
+function monochrome_ckeditor_css_alter(&$css, $format) {
+  // This theme ships with a custom copy of that file, that otherwise contains
+  // unwanted body styles (font, color).
+  $key = array_search('core/modules/ckeditor/css/ckeditor-iframe.css', $css);
+  unset($css[$key]);
+}
