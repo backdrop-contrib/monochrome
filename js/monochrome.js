@@ -61,7 +61,6 @@
       $('iframe.cke_wysiwyg_frame').contents().find('body').removeClass('dark-mode');
     }
     // Force the browser to rerender without reloading anything.
-    // @todo Get rid of inline style when not needed?
     $('body').css('visibility','hidden');
     $('body').css('visibility','visible');
   };

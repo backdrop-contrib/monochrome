@@ -121,6 +121,9 @@ ul {
 .item-list li {
   margin: 0;
 }
+[dir="rtl"] .item-list li {
+  margin: 0;
+}
 h1,
 h2,
 h3,
@@ -180,6 +183,10 @@ h6 {
   -webkit-clip-path: polygon(0 0, 10px 50%, 0 100%, calc(100% - 10px) 100%, 100% 50%, calc(100% - 10px) 0);
   clip-path: polygon(0 0, 10px 50%, 0 100%, calc(100% - 10px) 100%, 100% 50%, calc(100% - 10px) 0);
 }
+[dir="rtl"] .breadcrumb ol a {
+  -webkit-clip-path: polygon(10px 0, 0 50%, 10px 100%, 100% 100%, calc(100% - 10px) 50%, 100% 0);
+  clip-path: polygon(10px 0, 0 50%, 10px 100%, 100% 100%, calc(100% - 10px) 50%, 100% 0);
+}
 .breadcrumb ol a:hover {
   text-decoration: underline;
 }
@@ -187,6 +194,12 @@ h6 {
   padding-left: 12px;
   -webkit-clip-path: polygon(0 0, 0 100%, calc(100% - 10px) 100%, 100% 50%, calc(100% - 10px) 0);
   clip-path: polygon(0 0, 0 100%, calc(100% - 10px) 100%, 100% 50%, calc(100% - 10px) 0);
+}
+[dir="rtl"] .breadcrumb ol li:first-child a {
+  padding-left: 20px;
+  padding-right: 12px;
+  -webkit-clip-path: polygon(10px 0, 0 50%, 10px 100%, 100% 100%, 100% 0);
+  clip-path: polygon(10px 0, 0 50%, 10px 100%, 100% 100%, 100% 0);
 }
 .dark-mode .breadcrumb ol a {
   background: #555;
@@ -288,6 +301,13 @@ pre {
 .js .menu-dropdown > li.has-children > a:focus,
 .js .menu-dropdown > li.has-children > a:active {
   padding-right: 30px;/* LTR */
+}
+[dir="rtl"] .menu-dropdown li.has-children > a {
+  /* Core completely messes that. */
+  padding: 1rem .5rem 1rem 30px !important;
+}
+[dir="rtl"] .menu-dropdown ul li.has-children > a {
+  padding: .5rem .5rem .5rem 30px !important;
 }
 .dark-mode .menu-dropdown a span.sub-arrow {
   border-top-color: #eee;
@@ -411,6 +431,9 @@ blockquote {
   position: relative;
   padding: 0 0 0 2rem; /* LTR */
 }
+[dir="rtl"] blockquote {
+  padding: 0 2rem 0 0;
+}
 blockquote::before {
   content: "”";
   font-size: 3rem;
@@ -419,6 +442,10 @@ blockquote::before {
   top: 0;
   left: 0; /* LTR */
   color: #777;
+}
+[dir="rtl"] blockquote::before {
+  left: auto;
+  right: 0;
 }
 ul.inline,
 ul.links.inline {
@@ -439,6 +466,9 @@ ul.links.inline a {
   text-decoration: none;
   white-space: nowrap;
   margin: 0 1rem 1rem 0; /* LTR */
+}
+[dir="rtl"] ul.links.inline a {
+  margin: 0 0 1rem 1rem;
 }
 .dark-mode ul.links.inline a {
   background: #555 url("../img/monochrome-medium.png");

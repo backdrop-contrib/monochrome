@@ -114,6 +114,12 @@ button,
   margin: .5rem 1rem .5rem 0;/* LTR */
   padding: .5rem 1rem;
 }
+[dir="rtl"] button,
+[dir="rtl"] [type="button"],
+[dir="rtl"] [type="reset"],
+[dir="rtl"] [type="submit"] {
+  margin: .5rem 0 .5rem 1rem;
+}
 .dark-mode button,
 .dark-mode [type="button"],
 .dark-mode [type="reset"],
