@@ -195,6 +195,9 @@ a.form-cancel:focus {
 .vertical-tab-selected.vertical-tab-item {
   background-image: none;
 }
+.dark-mode .vertical-tab-selected.vertical-tab-item {
+  background-color: #333;
+}
 .vertical-tab-link:hover,
 .vertical-tab-link:focus {
   outline: 1px solid;
