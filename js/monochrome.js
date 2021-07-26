@@ -1,53 +1,58 @@
 (function ($) {
-  $(document).ready(function() {
-    const strings = {
-      buttonTextLight: Backdrop.t('Dark mode'),
-      titleTextLight: Backdrop.t('Switch to dark mode'),
-      buttonTextDark: Backdrop.t('Light mode'),
-      titleTextDark: Backdrop.t('Switch to light mode')
-    };
 
-    const dmButton = '<input id="darkmode-toggle" type="button" title="" value="">';
-    $('body').append(dmButton);
+  'use strict';
 
-    var dmValue = localStorage.getItem('monochromeDarkMode');
-    if (dmValue === '1') {
-      $('body').addClass('dark-mode');
-      $('#darkmode-toggle').attr('title', strings.titleTextDark);
-      $('#darkmode-toggle').attr('value', strings.buttonTextDark);
-    }
-    else {
-      $('#darkmode-toggle').attr('title', strings.titleTextLight);
-      $('#darkmode-toggle').attr('value', strings.buttonTextLight);
-    }
+  var monochromeDarkMode = monochromeDarkMode || {};
 
-    $('#darkmode-toggle').on('click', function() {
-      dmValue = localStorage.getItem('monochromeDarkMode');
-      if (dmValue === null) {
-        localStorage.setItem('monochromeDarkMode', '1');
-        mode = 'dark';
+  Backdrop.behaviors.monochromeDarkMode = {
+    attach: function (context, settings) {
+
+      const strings = {
+        buttonTextLight: Backdrop.t('Dark mode'),
+        titleTextLight: Backdrop.t('Switch to dark mode'),
+        buttonTextDark: Backdrop.t('Light mode'),
+        titleTextDark: Backdrop.t('Switch to light mode')
+      };
+
+      const dmButton = '<input id="darkmode-toggle" type="button" title="" value="">';
+      $('body').append(dmButton);
+
+      var dmValue = localStorage.getItem('monochromeDarkMode');
+      if (dmValue === '1') {
+        $('body').addClass('dark-mode');
+        $('#darkmode-toggle').attr('title', strings.titleTextDark);
+        $('#darkmode-toggle').attr('value', strings.buttonTextDark);
       }
       else {
-        localStorage.removeItem('monochromeDarkMode');
-        mode = 'light';
+        $('#darkmode-toggle').attr('title', strings.titleTextLight);
+        $('#darkmode-toggle').attr('value', strings.buttonTextLight);
       }
-      $(window).monochromeUpdateMode(mode, strings);
-    });
 
-    // It takes some time until CKEditor initializes, so we do some polling.
-    // That's not 100% reliable, too, but better than adding a huge timeout.
-    if (dmValue == true) {
-      let textareas = $('textarea');
-      // We can not know if CKEditor is active on that page, but at least we can
-      // skip polling if there's not even a textarea;
-      if (textareas.length > 0) {
-        $(window).monochromeWaitForCke();
+      $('#darkmode-toggle').on('click', function() {
+        var mode = 'light';
+        dmValue = localStorage.getItem('monochromeDarkMode');
+        if (dmValue === null) {
+          localStorage.setItem('monochromeDarkMode', '1');
+          mode = 'dark';
+        }
+        else {
+          localStorage.removeItem('monochromeDarkMode');
+        }
+        monochromeDarkMode.updateMode(mode, strings);
+      });
+
+      // It takes some time until CKEditor initializes, so we do some polling.
+      // That's not 100% reliable, too, but better than adding a huge timeout.
+      if (dmValue === '1') {
+        // Skip polling if we clearly have no CKEditor on that page.
+        if (typeof settings.filter != 'undefined') {
+          monochromeDarkMode.waitForCke();
+        }
       }
     }
+  };
 
-  });
-
-  $.fn.monochromeUpdateMode = function(mode, strings) {
+  monochromeDarkMode.updateMode = function(mode, strings) {
     if (mode === 'dark') {
       $('body').addClass('dark-mode');
       $('#darkmode-toggle').attr('title', strings.titleTextDark);
@@ -65,16 +70,16 @@
     $('body').css('visibility','visible');
   };
 
-  $.fn.monochromeWaitForCke = function () {
+  monochromeDarkMode.waitForCke = function () {
     var run = 1;
-    // The initial timeout is longer.
+    // The initial timeout is longer, CKE won't be initializing that fast.
     var timeout = 800;
 
     // Self-calling polling function.
     (function checkCke(run, timeout) {
       window.setTimeout(function () {
         timeout = 150;
-        ckeBody = $('iframe.cke_wysiwyg_frame').contents().find('body.cke_editable');
+        var ckeBody = $('iframe.cke_wysiwyg_frame').contents().find('body.cke_editable');
         if (ckeBody.length > 0) {
           ckeBody.addClass('dark-mode');
         }
