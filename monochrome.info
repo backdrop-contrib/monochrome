@@ -4,6 +4,7 @@ type = theme
 backdrop = 1.x
 
 stylesheets[all][] = css/lekton.css
+stylesheets[all][] = css/contents.css
 stylesheets[all][] = css/base.css
 stylesheets[all][] = css/b-forms.css
 stylesheets[all][] = css/comments.css
@@ -12,6 +13,6 @@ stylesheets[screen][] = css/maintenance.css
 ; Include a style sheet in the rich-text editor.
 ckeditor_stylesheets[] = css/lekton.css
 ckeditor_stylesheets[] = css/ckeditor-iframe.css
-ckeditor_stylesheets[] = css/base.css
+ckeditor_stylesheets[] = css/contents.css
 
 scripts[] = js/monochrome.js
