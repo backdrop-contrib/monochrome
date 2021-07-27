@@ -54,12 +54,14 @@
   left: -9px; /* LTR */
   top: 10px;
   width: 16px;
+  -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
 .dark-mode .comment .comment-arrow {
   background: #444;
 }
 [dir="rtl"] .comment .comment-arrow {
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   left: auto;
   right: -9px;
@@ -132,4 +134,7 @@ li.comment-forbidden > span {
 }
 .dark-mode .comments li.comment-forbidden > span {
   background: #333;
+}
+.comment-preview {
+  background-color: inherit;
 }
