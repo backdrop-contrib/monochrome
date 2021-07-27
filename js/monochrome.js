@@ -7,14 +7,14 @@
   Backdrop.behaviors.monochromeDarkMode = {
     attach: function (context, settings) {
 
-      const strings = {
+      var strings = {
         buttonTextLight: Backdrop.t('Dark mode'),
         titleTextLight: Backdrop.t('Switch to dark mode'),
         buttonTextDark: Backdrop.t('Light mode'),
         titleTextDark: Backdrop.t('Switch to light mode')
       };
 
-      const dmButton = '<input id="darkmode-toggle" type="button" title="" value="">';
+      var dmButton = '<input id="darkmode-toggle" type="button" title="" value="">';
       $('body').append(dmButton);
 
       var dmValue = localStorage.getItem('monochromeDarkMode');
