@@ -162,6 +162,10 @@ a.form-cancel {
   border: 1px solid;
   text-decoration: none;
 }
+[dir="rtl"] a.button,
+[dir="rtl"] a.form-cancel {
+  margin: 0 0 0 1rem;
+}
 a.button:hover,
 a.button:focus,
 a.form-cancel:hover,

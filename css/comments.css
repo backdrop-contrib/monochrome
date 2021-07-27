@@ -9,23 +9,20 @@
 }
 .comment {
   margin-bottom: 2rem;
-  display: table;
-  vertical-align: top;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 769px) {
+  .comment {
+    flex-wrap: nowrap;
+  }
 }
 .comment .attribution {
-  display: table-cell;
   padding: 0 30px 0 0; /* LTR */
-  vertical-align: top;
   overflow: hidden;
 }
 [dir="rtl"] .comment .attribution {
   padding: 0 0 0 30px;
-}
-@media (max-width: 640px) {
-  .comment,
-  .comment .attribution {
-    display: block;
-  }
 }
 .comment .attribution img {
   margin: 0;
@@ -53,9 +50,9 @@
   border-right: 1px solid;
   background: #fcfcfc;
   height: 16px;
-  margin-left: -34px; /* LTR */
-  margin-top: 10px;
   position: absolute;
+  left: -9px; /* LTR */
+  top: 10px;
   width: 16px;
   transform: rotate(-135deg);
 }
@@ -64,17 +61,16 @@
 }
 [dir="rtl"] .comment .comment-arrow {
   transform: rotate(45deg);
-  margin-left: 0;
-  margin-right: -34px;
+  left: auto;
+  right: -9px;
 }
 .comment .comment-text {
   padding: 10px 25px;
   border: 1px solid;
-  display: table-cell;
-  vertical-align: top;
   position: relative;
-  width: 100%;
-  background-color: #fcfcfc
+  background-color: #fcfcfc;
+  flex-grow: 1;
+  min-width: 65%;
 }
 .dark-mode .comment .comment-text {
   background-color: #444;
@@ -119,4 +115,21 @@
 }
 .dark-mode .comment-unpublished .comment-text {
   background: #474747 url("../img/mono-warn-dark.png");
+}
+li.comment-forbidden > span {
+  margin: 0 .5rem 0 0;/* LTR */
+  line-height: 2.2;
+}
+[dir="rtl"] li.comment-forbidden > span {
+  margin: 0 0 0 .5rem;
+}
+.comments li.comment-forbidden > span {
+  display: inline-block;
+  line-height: 1.7;
+  padding: 0 .5rem;
+  background: #fff;
+  border: 1px solid;
+}
+.dark-mode .comments li.comment-forbidden > span {
+  background: #333;
 }

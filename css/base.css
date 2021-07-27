@@ -179,7 +179,6 @@
 .menu-dropdown ul a:focus,
 .menu-dropdown ul a:active,
 .menu-dropdown ul a.highlighted {
-  /* @todo */
   background: #0002;
 }
 .block-system-main-menu ul.menu > li > a,
@@ -236,7 +235,7 @@
 }
 @media (min-width: 769px) {
   .view-promoted .view-content {
-    display: flex;/* @todo mobile */
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -245,13 +244,25 @@
     width: calc(50% - 1px);
   }
   .view-promoted .view-content > div:nth-child(even) {
-    border-left: 1px solid;
+    border-left: 1px solid; /* LTR */
   }
   .view-promoted .view-content > div:nth-child(odd) article {
-    margin-right: 2rem;
+    margin-right: 2rem; /* LTR */
   }
   .view-promoted .view-content > div:nth-child(even) article {
+    margin-left: 2rem; /* LTR */
+  }
+  [dir="rtl"] .view-promoted .view-content > div:nth-child(even) {
+    border-left: 0;
+    border-right: 1px solid;
+  }
+  [dir="rtl"] .view-promoted .view-content > div:nth-child(odd) article {
+    margin-right: 0;
     margin-left: 2rem;
+  }
+  [dir="rtl"] .view-promoted .view-content > div:nth-child(even) article {
+    margin-left: 0;
+    margin-right: 2rem;
   }
 }
 .view-promoted .view-content > div {
@@ -393,7 +404,7 @@ ul.links.inline .comment-forbidden a {
 #darkmode-toggle {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 10px; /* LTR */
   margin: 0;
   padding: 0;
   font-weight: normal;
@@ -405,7 +416,10 @@ ul.links.inline .comment-forbidden a {
   border-color: #aaa;
   background: transparent url("../img/dark-mode.png") center no-repeat;
   background-size: 26px;
-  /* ... @todo */
+}
+[dir="rtl"] #darkmode-toggle {
+  right: auto;
+  left: 10px;
 }
 html.admin-bar #darkmode-toggle {
   top: 43px;

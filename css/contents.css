@@ -19,7 +19,6 @@ h3 a {
 }
 a:hover,
 a:focus {
-  /* @todo */
   color: #000;
 }
 .dark-mode a {
