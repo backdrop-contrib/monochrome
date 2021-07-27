@@ -83,7 +83,7 @@
         if (ckeBody.length > 0) {
           ckeBody.addClass('dark-mode');
         }
-        else if (run < 5) {
+        else if (run < 6) {
           run += 1;
           checkCke(run, timeout);
         }
