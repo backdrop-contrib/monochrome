@@ -80,3 +80,12 @@ function monochrome_ckeditor_css_alter(&$css, $format) {
   $key = array_search('core/modules/ckeditor/css/ckeditor-iframe.css', $css);
   unset($css[$key]);
 }
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function monochrome_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['title']['#default_value'])) {
+    unset($form['title']['#attributes']['autofocus']);
+  }
+}
