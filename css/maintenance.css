@@ -20,7 +20,7 @@
 .maintenance-page .l-container header {
   margin: 0 0 3rem;
 }
-header img {
+.maintenance-page header img {
   max-width: 200px;
 }
 @media (min-width: 769px) {
