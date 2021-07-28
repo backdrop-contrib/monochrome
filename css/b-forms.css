@@ -368,3 +368,73 @@ a.tabledrag-handle .handle {
 .dark-mode a.tabledrag-handle .handle {
   background-image: url("../img/grippie-light.png");
 }
+#system-modules .table-filter {
+  border-radius: 0;
+  background-color: inherit;
+  border: 1px solid;
+}
+.system-status-report .status-title {
+  color: inherit;
+}
+.system-status-report .status-description {
+  color: inherit;
+}
+table.dblog-event {
+  width: 100%;
+}
+.installer-browser-sort {
+  display: block;
+}
+.item-list .installer-browser-sort-list {
+  padding: 0;
+}
+.installer-browser-sort-list li {
+  margin: 0 1rem;
+}
+.installer-browser-sort-list li a {
+  color: inherit;
+}
+.installer-browser-list-sidebar {
+}
+.installer-browser .installer-browser-block {
+  border: 1px solid;
+  background: inherit;
+  color: inherit;
+}
+.installer-browser .installer-browser-block h2 {
+  font-size: 1.4rem;
+  background: inherit;
+  color: inherit;
+  border-bottom: 1px solid;
+}
+.admin-panel {
+  margin: 0 0 2rem;
+  padding: 1rem;
+  border: 1px solid;
+}
+div.admin .left,
+div.admin .right,
+[dir="rtl"] div.admin .left,
+[dir="rtl"] div.admin .right {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+.admin.clearfix::after {
+  display: none;
+}
+@media (min-width: 769px) {
+  div.admin {
+    display: flex;
+    justify-content: space-between;
+  }
+  div.admin .left,
+  div.admin .right,
+  [dir="rtl"] div.admin .left,
+  [dir="rtl"] div.admin .right {
+    width: 48%;
+  }
+}
+span.dashboard-external {
+  filter: saturate(0);
+}
