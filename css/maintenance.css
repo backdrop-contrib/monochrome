@@ -20,6 +20,9 @@
 .maintenance-page .l-container header {
   margin: 0 0 3rem;
 }
+header img {
+  max-width: 200px;
+}
 @media (min-width: 769px) {
   .maintenance-page .l-container {
     padding: 3rem;
