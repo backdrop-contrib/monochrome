@@ -20,8 +20,13 @@ function monochrome_preprocess_page(&$variables) {
       $variables['classes'][] = backdrop_clean_css_identifier('term-page-' . $term->name);
     }
   }
+  // CSS class for node preview page.
   elseif (substr($path, 0, 13) == 'node/preview/') {
     $variables['classes'][] = 'node-preview-page';
+  }
+  // Admin pages.
+  elseif (substr($path, 0, 6) == 'admin/') {
+    $variables['classes'][] = 'admin-page';
   }
 }
 

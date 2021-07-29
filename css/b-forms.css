@@ -182,6 +182,10 @@ a.form-cancel:focus {
 .dark-mode .form-delete {
   background: #474747 url("../img/mono-warn-dark.png");
 }
+fieldset {
+  margin: 1rem 0;
+  padding: .5rem 1rem 1rem;
+}
 .vertical-tab-link {
   color: #000;
 }
@@ -437,4 +441,24 @@ div.admin .right,
 }
 span.dashboard-external {
   filter: saturate(0);
+}
+.admin-page .layout {
+  max-width: 1400px;
+}
+@media (min-width: 1025px) {
+  .admin-page table {
+    font-size: 1rem;
+  }
+}
+.admin-page table th,
+.admin-page table td {
+  padding: .8em 1em;
+}
+.update tr {
+  border: none;
+  /* Workaround for quirky border display because of position relative. */
+  box-shadow: 0 -1px 0 inset #ccc;
+}
+.update.checked {
+  margin: 1rem 0;
 }
