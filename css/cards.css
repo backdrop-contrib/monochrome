@@ -1,0 +1,61 @@
+/* Home page cards */
+.front .block-hero + .block-views-promoted-cards-block {
+  margin-top: -50px;
+}
+.front .block-hero + .block-system-messages {
+  margin-top: -50px;
+  margin-bottom: 0;
+}
+.front .block-system-messages + .block-views-promoted-cards-block {
+  margin-top: -6px;
+}
+.block-views-promoted-cards-block {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 1.5rem;
+  background-color: #f7f7f7;
+}
+.dark-mode .block-views-promoted-cards-block {
+  color: #fff;
+  background-color: #444;
+}
+.block-views-promoted-cards-block {
+  max-width: none;
+  margin-left: -4vw;
+  margin-right: -4vw;
+}
+.view-promoted-cards {
+  padding: 0 1.5rem;
+  margin: 0 0 3rem;
+}
+.view-promoted-cards .views-view-grid {
+  gap: 1.5rem;
+}
+.view-promoted-cards .views-grid-box {
+  border: none;
+  padding: 0 0 1rem;
+  max-width: 540px;
+}
+.view-promoted-cards .views-field-field-image img {
+  filter: saturate(0%) brightness(140%);
+}
+.dark-mode .view-promoted-cards .views-field-field-image img {
+  -webkit-filter: saturate(0%) brightness(80%);
+  filter: saturate(0%) brightness(80%);
+}
+.view-promoted-cards .views-grid-box:hover .views-field-field-image img {
+  -webkit-filter: none;
+  filter: none;
+}
+.view-promoted-cards .views-field-title h2 {
+  margin: 1rem 0;
+  font-size: 1.8rem;
+}
+@media (max-width: 1024px) {
+  .view-promoted-cards .views-view-grid {
+    display: block;
+  }
+  .view-promoted-cards .views-grid-box {
+    margin: 0 auto 2rem;
+  }
+}
