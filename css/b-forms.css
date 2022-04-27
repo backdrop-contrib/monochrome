@@ -142,6 +142,19 @@ button:focus,
   box-shadow: 2px 2px 0;
   outline: none;
 }
+/* Fullcalendar variables */
+:root {
+  --fc-button-text-color: #000;
+  --fc-button-bg-color: #f7f7f7;
+}
+.dark-mode {
+  --fc-button-text-color: #eee;
+  --fc-button-bg-color: #1f1f1f;
+  --fc-button-border-color: #eee;
+  --fc-button-hover-border-color: #eee;
+  --fc-button-active-border-color: #eee;
+  --fc-page-bg-color: #1f1f1f;
+}
 input.button-primary {
   color: #fff;
   background: #828282 url("../img/monochrome-medium.png");
