@@ -37,7 +37,8 @@
   max-width: 540px;
 }
 .view-promoted-cards .views-field-field-image img {
-  filter: saturate(0%) brightness(140%);
+  -webkit-filter: saturate(0%) brightness(130%);
+  filter: saturate(0%) brightness(130%);
 }
 .dark-mode .view-promoted-cards .views-field-field-image img {
   -webkit-filter: saturate(0%) brightness(80%);
