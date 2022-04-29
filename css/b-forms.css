@@ -313,6 +313,16 @@ fieldset .fieldset-title {
 .dark-mode .ui-dialog {
   background: #333;
 }
+.dark-mode .ui-widget-content {
+  color: #eee;
+}
+.image-library-choose-file {
+  border-color: #ccc;
+  margin: 2px;
+}
+.dark-mode .image-library-choose-file {
+  background-color: #333;
+}
 .node-preview-container {
   background: #828282 url("../img/monochrome-medium.png");
   color: #fff;
