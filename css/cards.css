@@ -37,12 +37,12 @@
   max-width: 540px;
 }
 .view-promoted-cards .views-field-field-image img {
-  -webkit-filter: saturate(0%) brightness(130%);
-  filter: saturate(0%) brightness(130%);
+  -webkit-filter: saturate(0%) brightness(110%);
+  filter: saturate(0%) brightness(110%);
 }
 .dark-mode .view-promoted-cards .views-field-field-image img {
-  -webkit-filter: saturate(0%) brightness(80%);
-  filter: saturate(0%) brightness(80%);
+  -webkit-filter: saturate(0%) brightness(85%);
+  filter: saturate(0%) brightness(85%);
 }
 .view-promoted-cards .views-grid-box:hover .views-field-field-image img {
   -webkit-filter: none;
