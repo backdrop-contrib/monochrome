@@ -8,6 +8,13 @@
   display: flex;
   flex-direction: column;
 }
+.layout .layout,
+.admin-bar body .layout .layout {
+  display: block;
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+}
 #layout-edit .layout {
   display: block;
   margin: 0;
@@ -21,6 +28,10 @@
   display: flex;
   flex-direction: column;
   min-height: 99vh;
+}
+.layout .layout .layout-flexible-content {
+  min-height: 0;
+  display: block;
 }
 .layout--flexible .flexible-row:nth-last-child(2),
 .layout .l-wrapper {
@@ -57,6 +68,9 @@
 }
 .container.container-fluid {
   padding: 0 2vw;
+}
+.layout .layout .container.container-fluid {
+  padding: 0;
 }
 .block-hero {
   margin-left: -4vw;
