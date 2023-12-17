@@ -16,4 +16,7 @@ ckeditor_stylesheets[] = css/lekton.css
 ckeditor_stylesheets[] = css/ckeditor-iframe.css
 ckeditor_stylesheets[] = css/contents.css
 
+tinymce_content_css[] = css/lekton.css
+tinymce_content_css[] = css/contents.css
+
 scripts[] = js/monochrome.js

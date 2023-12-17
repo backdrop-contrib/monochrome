@@ -41,12 +41,13 @@
         monochromeDarkMode.updateMode(mode, strings);
       });
 
-      // It takes some time until CKEditor initializes, so we do some polling.
+      // It takes some time until editor initializes, so we do some polling.
       // That's not 100% reliable, too, but better than adding a huge timeout.
       if (dmValue === '1') {
-        // Skip polling if we clearly have no CKEditor on that page.
+        // Skip polling if we clearly have no editor on that page.
         if (typeof settings.filter != 'undefined') {
           monochromeDarkMode.waitForCke();
+          monochromeDarkMode.waitForTiny();
         }
       }
     }
@@ -58,12 +59,14 @@
       $('#darkmode-toggle').attr('title', strings.titleTextDark);
       $('#darkmode-toggle').attr('value', strings.buttonTextDark);
       $('iframe.cke_wysiwyg_frame').contents().find('body').addClass('dark-mode');
+      $('iframe.tox-edit-area__iframe').contents().find('body').addClass('dark-mode');
     }
     else {
       $('body').removeClass('dark-mode');
       $('#darkmode-toggle').attr('title', strings.titleTextLight);
       $('#darkmode-toggle').attr('value', strings.buttonTextLight);
       $('iframe.cke_wysiwyg_frame').contents().find('body').removeClass('dark-mode');
+      $('iframe.tox-edit-area__iframe').contents().find('body').removeClass('dark-mode');
     }
     // Force the browser to rerender without reloading anything.
     $('body').css('visibility','hidden');
@@ -86,6 +89,27 @@
         else if (run < 6) {
           run += 1;
           checkCke(run, timeout);
+        }
+      }, timeout);
+    })(run, timeout);
+  };
+  // Copy of CKE related code for TinyMCE.
+  monochromeDarkMode.waitForTiny = function () {
+    var run = 1;
+    // The initial timeout is longer, Tiny won't be initializing that fast.
+    var timeout = 800;
+
+    // Self-calling polling function.
+    (function checkTiny(run, timeout) {
+      window.setTimeout(function () {
+        timeout = 150;
+        var tinyBody = $('iframe.tox-edit-area__iframe').contents().find('body.mce-content-body');
+        if (tinyBody.length > 0) {
+          tinyBody.addClass('dark-mode');
+        }
+        else if (run < 6) {
+          run += 1;
+          checkTiny(run, timeout);
         }
       }, timeout);
     })(run, timeout);

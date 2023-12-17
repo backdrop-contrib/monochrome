@@ -120,9 +120,11 @@ blockquote::before {
   left: auto;
   right: 0;
 }
+.mce-content-body,
 .cke_editable {
   background: #fff;
 }
+.dark-mode.mce-content-body,
 .dark-mode.cke_editable {
   background: #333;
 }
