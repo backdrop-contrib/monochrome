@@ -28,3 +28,6 @@
     padding: 3rem;
   }
 }
+.dark-mode .user-simplified-page-wrapper {
+  background-color: #333;
+}
