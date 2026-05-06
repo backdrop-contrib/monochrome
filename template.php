@@ -28,6 +28,11 @@ function monochrome_preprocess_page(&$variables) {
   elseif (substr($path, 0, 6) == 'admin/') {
     $variables['classes'][] = 'admin-page';
   }
+  // Older core versions need this override because of dark mode.
+  if (version_compare(BACKDROP_VERSION, 1.34, '<')) {
+    $theme_path = backdrop_get_path('theme', 'monochrome');
+    backdrop_add_css($theme_path . '/css/tabledrag-override.css');
+  }
 }
 
 /**
