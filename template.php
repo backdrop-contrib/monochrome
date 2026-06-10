@@ -52,9 +52,11 @@ function monochrome_preprocess_node(&$variables) {
  * Implements template_preprocess_layout().
  */
 function monochrome_preprocess_layout(&$variables) {
-  if (isset($variables['layout_info']['flexible'])) {
-    // Add css class to layout.
-    $variables['classes'][] = 'layout-' . backdrop_clean_css_identifier($variables['layout_info']['name']);
+  // As of core 1.34.0 "layout_info" is null, will get removed in core 2.x.
+  $info = $variables['layout_info'] ?? $variables['layout_template_info'];
+  if ($info && !empty($info['flexible'])) {
+    // Add CSS class to layout based on flexible template machine name.
+    $variables['classes'][] = backdrop_clean_css_identifier('layout-' . $info['name']);
   }
 }
 
